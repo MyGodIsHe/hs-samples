@@ -13,7 +13,7 @@ main = do
     putStr $ unlines $ map (showXY $ f a b c) [xFrom,xFrom+xDelta..xTo]
 
 readWords n = do
-     values <- fmap (map read.words) getLine
+     values <- fmap (map read . words) getLine
      if length values == n then return values else do
          putStrLn ("sorry, could you give me exactly " ++ show n ++
                    " values, " ++ "separated by spaces?")
